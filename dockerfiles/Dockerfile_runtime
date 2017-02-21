@@ -13,12 +13,11 @@ RUN curl  -o $KIBANA_PKG_NAME.tar.gz https://download.elastic.co/kibana/kibana/$
 #RUN mv /usr/share/$KIBANA_PKG_NAME /usr/share/kibana
 RUN /usr/share/kibana/bin/kibana plugin --install elasticsearch/marvel/latest
 
-COPY entrypoint.sh /
-RUN chmod +x *.sh
+#COPY entrypoint.sh /
+#RUN chmod +x *.sh
 
 # Define working directory.
 WORKDIR  /usr/share/kibana
 
 # Define default command.
-ENTRYPOINT ["/entrypoint.sh"]
-
+# ENTRYPOINT ["/entrypoint.sh"]
